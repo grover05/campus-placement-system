@@ -1,6 +1,9 @@
 package com.pms.controller;
 
-import com.pms.dto.*;
+import com.pms.dto.Dtos.ApplicationResponse;
+import com.pms.dto.Dtos.DriveResponse;
+import com.pms.dto.Dtos.StudentProfileRequest;
+import com.pms.dto.Dtos.StudentProfileResponse;
 import com.pms.service.StudentService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -39,7 +42,7 @@ public class StudentController {
     @PostMapping(value = "/me/resume", consumes = "multipart/form-data")
     @Operation(summary = "Upload/replace my resume (PDF, DOC or DOCX, max 5MB)")
     public ResponseEntity<StudentProfileResponse> uploadResume(Authentication authentication,
-                                                                 @RequestParam("file") MultipartFile file) {
+                                                                  @RequestParam("file") MultipartFile file) {
         return ResponseEntity.ok(studentService.uploadResume(authentication.getName(), file));
     }
 

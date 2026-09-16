@@ -1,11 +1,11 @@
 package com.pms.service;
 
-import com.pms.dto.ApplicationResponse;
-import com.pms.dto.DriveResponse;
-import com.pms.exception.ResourceNotFoundException;
-import com.pms.exception.UnauthorizedActionException;
+import com.pms.dto.Dtos.ApplicationResponse;
+import com.pms.dto.Dtos.DriveResponse;
+import com.pms.exception.GlobalExceptionHandler.ResourceNotFoundException;
+import com.pms.exception.GlobalExceptionHandler.UnauthorizedActionException;
 import com.pms.model.Application;
-import com.pms.model.ApplicationStatus;
+import com.pms.model.Application.ApplicationStatus;
 import com.pms.model.Drive;
 import com.pms.model.Recruiter;
 import com.pms.model.Student;

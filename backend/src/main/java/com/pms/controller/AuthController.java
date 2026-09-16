@@ -1,8 +1,8 @@
 package com.pms.controller;
 
-import com.pms.dto.AuthResponse;
-import com.pms.dto.LoginRequest;
-import com.pms.dto.RegisterRequest;
+import com.pms.dto.Dtos.AuthResponse;
+import com.pms.dto.Dtos.LoginRequest;
+import com.pms.dto.Dtos.RegisterRequest;
 import com.pms.service.AuthService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

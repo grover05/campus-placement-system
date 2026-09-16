@@ -1,13 +1,17 @@
 package com.pms.service;
 
-import com.pms.dto.AuthResponse;
-import com.pms.dto.LoginRequest;
-import com.pms.dto.RegisterRequest;
-import com.pms.exception.DuplicateResourceException;
-import com.pms.model.*;
+import com.pms.dto.Dtos.AuthResponse;
+import com.pms.dto.Dtos.LoginRequest;
+import com.pms.dto.Dtos.RegisterRequest;
+import com.pms.exception.GlobalExceptionHandler.DuplicateResourceException;
+import com.pms.model.Recruiter;
+import com.pms.model.Student;
+import com.pms.model.User;
+import com.pms.model.User.Role;
 import com.pms.repository.RecruiterRepository;
 import com.pms.repository.StudentRepository;
 import com.pms.repository.UserRepository;
+import com.pms.security.JwtSecurity.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -15,8 +19,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.pms.security.JwtUtil;
 
 @Service
 @RequiredArgsConstructor
@@ -56,7 +58,6 @@ public class AuthService {
                     .build();
             recruiterRepository.save(recruiter);
         }
-        // TPO needs no additional profile table.
 
         String token = jwtUtil.generateToken(user.getEmail(), user.getRole().name());
 

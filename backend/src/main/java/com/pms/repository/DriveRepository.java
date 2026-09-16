@@ -1,7 +1,7 @@
 package com.pms.repository;
 
 import com.pms.model.Drive;
-import com.pms.model.DriveStatus;
+import com.pms.model.Drive.DriveStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

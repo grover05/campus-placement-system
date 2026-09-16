@@ -1,15 +1,15 @@
 package com.pms.service;
 
-import com.pms.dto.AuthResponse;
-import com.pms.dto.LoginRequest;
-import com.pms.dto.RegisterRequest;
-import com.pms.exception.DuplicateResourceException;
-import com.pms.model.Role;
+import com.pms.dto.Dtos.AuthResponse;
+import com.pms.dto.Dtos.LoginRequest;
+import com.pms.dto.Dtos.RegisterRequest;
+import com.pms.exception.GlobalExceptionHandler.DuplicateResourceException;
 import com.pms.model.User;
+import com.pms.model.User.Role;
 import com.pms.repository.RecruiterRepository;
 import com.pms.repository.StudentRepository;
 import com.pms.repository.UserRepository;
-import com.pms.security.JwtUtil;
+import com.pms.security.JwtSecurity.JwtUtil;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

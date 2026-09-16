@@ -1,6 +1,6 @@
 package com.pms.exception;
 
-import com.pms.dto.ErrorResponse;
+import com.pms.dto.Dtos.ErrorResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,11 +16,34 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 /**
- * Centralised exception handling so every error response returned by the API
- * has the same, predictable shape.
+ * Centralised exception handling and custom exception declarations.
  */
 @RestControllerAdvice
 public class GlobalExceptionHandler {
+
+    public static class BadRequestException extends RuntimeException {
+        public BadRequestException(String message) {
+            super(message);
+        }
+    }
+
+    public static class DuplicateResourceException extends RuntimeException {
+        public DuplicateResourceException(String message) {
+            super(message);
+        }
+    }
+
+    public static class ResourceNotFoundException extends RuntimeException {
+        public ResourceNotFoundException(String message) {
+            super(message);
+        }
+    }
+
+    public static class UnauthorizedActionException extends RuntimeException {
+        public UnauthorizedActionException(String message) {
+            super(message);
+        }
+    }
 
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<ErrorResponse> handleNotFound(ResourceNotFoundException ex, HttpServletRequest request) {

@@ -1,7 +1,10 @@
 package com.pms.controller;
 
-import com.pms.dto.*;
-import com.pms.model.DriveStatus;
+import com.pms.dto.Dtos.ApplicationResponse;
+import com.pms.dto.Dtos.ApplicationStatusUpdateRequest;
+import com.pms.dto.Dtos.DriveRequest;
+import com.pms.dto.Dtos.DriveResponse;
+import com.pms.model.Drive.DriveStatus;
 import com.pms.service.TpoService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

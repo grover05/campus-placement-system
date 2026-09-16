@@ -1,8 +1,8 @@
 package com.pms.controller;
 
-import com.pms.dto.ApplicationResponse;
-import com.pms.dto.ApplicationStatusUpdateRequest;
-import com.pms.dto.DriveResponse;
+import com.pms.dto.Dtos.ApplicationResponse;
+import com.pms.dto.Dtos.ApplicationStatusUpdateRequest;
+import com.pms.dto.Dtos.DriveResponse;
 import com.pms.service.RecruiterService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

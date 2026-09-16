@@ -20,6 +20,12 @@ import java.time.LocalDateTime;
 @Builder
 public class Application {
 
+    public enum ApplicationStatus {
+        APPLIED,
+        SHORTLISTED,
+        REJECTED
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

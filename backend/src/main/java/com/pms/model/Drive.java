@@ -17,6 +17,11 @@ import java.util.Set;
 @Builder
 public class Drive {
 
+    public enum DriveStatus {
+        OPEN,
+        CLOSED
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

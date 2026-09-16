@@ -14,6 +14,12 @@ import java.time.LocalDateTime;
 @Builder
 public class User {
 
+    public enum Role {
+        STUDENT,
+        TPO,
+        RECRUITER
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

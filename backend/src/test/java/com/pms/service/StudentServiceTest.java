@@ -1,10 +1,16 @@
 package com.pms.service;
 
-import com.pms.dto.ApplicationResponse;
-import com.pms.dto.DriveResponse;
-import com.pms.exception.BadRequestException;
-import com.pms.exception.DuplicateResourceException;
-import com.pms.model.*;
+import com.pms.dto.Dtos.ApplicationResponse;
+import com.pms.dto.Dtos.DriveResponse;
+import com.pms.exception.GlobalExceptionHandler.BadRequestException;
+import com.pms.exception.GlobalExceptionHandler.DuplicateResourceException;
+import com.pms.model.Application;
+import com.pms.model.Application.ApplicationStatus;
+import com.pms.model.Drive;
+import com.pms.model.Drive.DriveStatus;
+import com.pms.model.Student;
+import com.pms.model.User;
+import com.pms.model.User.Role;
 import com.pms.repository.ApplicationRepository;
 import com.pms.repository.DriveRepository;
 import com.pms.repository.StudentRepository;

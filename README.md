@@ -36,24 +36,25 @@ Controller  →  Service  →  Repository  →  PostgreSQL
 campus-placement-system/
 ├── backend/               # Spring Boot REST API
 │   ├── src/main/java/com/pms/
-│   │   ├── model/          # JPA entities
+│   │   ├── model/          # JPA entities (User, Student, Recruiter, Drive, Application)
 │   │   ├── repository/     # Spring Data repositories
-│   │   ├── service/        # Business logic (incl. EligibilityService)
-│   │   ├── controller/     # REST controllers
-│   │   ├── dto/             # Request/response DTOs
-│   │   ├── security/        # JWT filter, UserDetails, JwtUtil
-│   │   ├── config/          # Security, CORS, OpenAPI config
-│   │   └── exception/       # Global exception handler
+│   │   ├── service/        # Business logic (incl. EligibilityService, FileStorageService)
+│   │   ├── controller/     # REST controllers (Auth, Student, Recruiter, TPO)
+│   │   ├── dto/Dtos.java   # Consolidated request/response DTO container
+│   │   ├── security/       # CustomUserDetailsService & JwtSecurity
+│   │   ├── config/AppConfig.java  # Consolidated Security, CORS, OpenAPI & MVC config
+│   │   └── exception/GlobalExceptionHandler.java # Consolidated exceptions & REST advice
 │   ├── src/test/java/...    # JUnit + Mockito tests
 │   ├── Dockerfile
 │   └── pom.xml
 ├── frontend/               # React (Vite) SPA
 │   ├── src/
-│   │   ├── api/             # Axios instance with JWT interceptor
-│   │   ├── context/         # AuthContext
-│   │   ├── components/      # ProtectedRoute, Navbar
-│   │   └── pages/           # Login, Register, per-role dashboards
-│   └── Dockerfile
+│   │   ├── main.jsx         # App mount point
+│   │   ├── index.css        # Global design system styling
+│   │   ├── App.jsx          # Router, AuthContext, Axios client, Navbar, Route guard & Auth pages
+│   │   └── Dashboards.jsx   # Consolidated Student, Recruiter, and TPO dashboards
+│   ├── Dockerfile
+│   └── nginx.conf
 ├── docker-compose.yml
 └── .github/workflows/ci.yml
 ```

@@ -1,6 +1,6 @@
 package com.pms.service;
 
-import com.pms.exception.BadRequestException;
+import com.pms.exception.GlobalExceptionHandler.BadRequestException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;

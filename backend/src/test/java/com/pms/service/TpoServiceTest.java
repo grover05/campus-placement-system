@@ -1,11 +1,16 @@
 package com.pms.service;
 
-import com.pms.dto.ApplicationResponse;
-import com.pms.dto.DriveRequest;
-import com.pms.dto.DriveResponse;
-import com.pms.exception.BadRequestException;
-import com.pms.exception.ResourceNotFoundException;
-import com.pms.model.*;
+import com.pms.dto.Dtos.ApplicationResponse;
+import com.pms.dto.Dtos.DriveRequest;
+import com.pms.dto.Dtos.DriveResponse;
+import com.pms.exception.GlobalExceptionHandler.BadRequestException;
+import com.pms.exception.GlobalExceptionHandler.ResourceNotFoundException;
+import com.pms.model.Application;
+import com.pms.model.Application.ApplicationStatus;
+import com.pms.model.Drive;
+import com.pms.model.Drive.DriveStatus;
+import com.pms.model.User;
+import com.pms.model.User.Role;
 import com.pms.repository.ApplicationRepository;
 import com.pms.repository.DriveRepository;
 import com.pms.repository.RecruiterRepository;
@@ -97,7 +102,7 @@ class TpoServiceTest {
     @DisplayName("Updating application status persists the new status")
     void updateApplicationStatus_updatesStatus() {
         User studentUser = User.builder().id(2L).email("s@x.com").fullName("Student One").build();
-        Student student = Student.builder().id(1L).user(studentUser).branch("CS").percentage(80.0).backlogs(0).build();
+        com.pms.model.Student student = com.pms.model.Student.builder().id(1L).user(studentUser).branch("CS").percentage(80.0).backlogs(0).build();
         Application application = Application.builder().id(100L).student(student).drive(drive).status(ApplicationStatus.APPLIED).build();
 
         when(applicationRepository.findById(100L)).thenReturn(Optional.of(application));
